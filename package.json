@@ -9,9 +9,10 @@
   },
   "license": "MIT",
   "scripts": {
-    "clean": "rm -rf build",
-    "dev": "npm run clean && webpack-dev-server",
-    "build": "npm run clean && webpack --progress --hide-modules"
+    "clean": "rm -rf build && mkdir build",
+    "build": "npm run clean && npm run public && webpack --progress --hide-modules",
+    "dev": "npm run clean && npm run public && webpack-dev-server",
+    "public": "cp public/* build/"
   },
   "dependencies": {
     "vue": "^2.4.2"

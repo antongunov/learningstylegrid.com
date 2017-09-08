@@ -41,4 +41,7 @@ module.exports = {
       'vue$': 'vue/dist/vue.esm.js'
     }
   },
+  devServer: {
+    contentBase: resolve('build/'),
+  },
 };
