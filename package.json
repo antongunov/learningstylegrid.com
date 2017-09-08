@@ -1,0 +1,33 @@
+{
+  "name": "@antongunov/learningstylegrid",
+  "version": "0.0.1",
+  "description": "Build your learning style grid",
+  "private": true,
+  "author": {
+    "name": "Anton Gunov",
+    "email": "anton@gunov.name"
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf build",
+    "dev": "npm run clean && webpack-dev-server",
+    "build": "npm run clean && webpack --progress --hide-modules"
+  },
+  "dependencies": {
+    "vue": "^2.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "css-loader": "^0.28.7",
+    "dotenv": "^4.0.0",
+    "file-loader": "^0.11.2",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.2",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
