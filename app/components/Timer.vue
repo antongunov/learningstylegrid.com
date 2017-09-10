@@ -9,22 +9,35 @@
     props: {
       seconds: {
         type: Number,
+        required: true,
       },
+    },
+    data() {
+      return {
+        counter: 0,
+      };
     },
     computed: {
       timerMin() {
-        return ('0' + Math.trunc(this.seconds / 60)).slice(-2);
+        return this.twoDigits(Math.trunc(this.counter / 60));
       },
       timerSec() {
-        return ('0' + this.seconds % 60).slice(-2);
+        return this.twoDigits(this.counter % 60);
       },
     },
+    methods: {
+      twoDigits: (num) => ('0' + num).slice(-2),
+    },
     mounted() {
+      this.counter = this.seconds;
       setTimeout(() => {
         const timerId = setInterval(() => {
-          this.seconds -= 1;
+          this.counter -= 1;
         }, 1000);
-        setTimeout(() => clearInterval(timerId), this.seconds * 1000)
+        setTimeout(() => {
+          clearInterval(timerId);
+          this.$emit('end');
+        }, this.seconds * 1000)
       }, 1000);
     },
   }
