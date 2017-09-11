@@ -6,6 +6,7 @@
 
 <script type="text/javascript">
   export default {
+    name: 'Timer',
     props: {
       seconds: {
         type: Number,
@@ -36,7 +37,7 @@
         }, 1000);
         setTimeout(() => {
           clearInterval(timerId);
-          this.$emit('end');
+          this.$emit('on-end');
         }, this.seconds * 1000)
       }, 1000);
     },

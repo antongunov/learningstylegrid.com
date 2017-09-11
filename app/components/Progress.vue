@@ -6,6 +6,7 @@
 
 <script type="text/javascript">
   export default {
+    name: 'Progress',
     props: {
       currentQuestion: {
         type: Number,

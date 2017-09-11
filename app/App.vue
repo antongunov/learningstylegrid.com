@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <h1>{{ msg }}</h1>
-    <app-timer :seconds="300" @end=""></app-timer>
+    <app-timer :seconds="300" @on-end=""></app-timer>
     <app-progress :current-question="1" :total-questions="12"></app-progress>
     <app-sentence></app-sentence>
   </div>
@@ -13,7 +13,7 @@
   import Progress from './components/Progress.vue';
 
   export default {
-    name: 'app',
+    name: 'App',
     components: {
       appSentence: Sentence,
       appTimer: Timer,
