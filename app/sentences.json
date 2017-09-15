@@ -1,0 +1,47 @@
+[
+  {
+    "begin": "#1. Begin sentence...",
+    "endings": [
+      "...ending (A)",
+      "...ending (B)",
+      "...ending (C)",
+      "...ending (D)"
+    ]
+  },
+  {
+    "begin": "#2. Begin sentence...",
+    "endings": [
+      "...ending (A)",
+      "...ending (B)",
+      "...ending (C)",
+      "...ending (D)"
+    ]
+  },
+  {
+    "begin": "#3. Begin sentence...",
+    "endings": [
+      "...ending (A)",
+      "...ending (B)",
+      "...ending (C)",
+      "...ending (D)"
+    ]
+  },
+  {
+    "begin": "#4. Begin sentence...",
+    "endings": [
+      "...ending (A)",
+      "...ending (B)",
+      "...ending (C)",
+      "...ending (D)"
+    ]
+  },
+  {
+    "begin": "#5. Begin sentence...",
+    "endings": [
+      "...ending (A)",
+      "...ending (B)",
+      "...ending (C)",
+      "...ending (D)"
+    ]
+  }
+]
