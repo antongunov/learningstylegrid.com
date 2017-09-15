@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>{{ timerMin }} : {{ timerSec }}</p>
+    <p>{{ timerMin | n-digits(2) }} : {{ timerSec | n-digits(2) }}</p>
   </div>
 </template>
 
@@ -20,14 +20,14 @@
     },
     computed: {
       timerMin() {
-        return this.twoDigits(Math.trunc(this.counter / 60));
+        return Math.trunc(this.counter / 60);
       },
       timerSec() {
-        return this.twoDigits(this.counter % 60);
+        return this.counter % 60;
       },
     },
-    methods: {
-      twoDigits: (num) => ('0' + num).slice(-2),
+    filters: {
+      'n-digits': (v, n) => (new Array(n).join('0') + v).slice(-n),
     },
     mounted() {
       this.counter = this.seconds;
