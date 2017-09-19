@@ -6,9 +6,11 @@
         <div>
           <p>{{ ending }}</p>
         </div>
-        <div>
-          <button v-for="j in sentence.endings.length" @click="rank(i, j)">{{ j }}</button>
-        </div>
+        <ul>
+          <li v-for="j in 4">
+            <button @click="onRank(i, j)">{{ j }}</button>
+          </li>
+        </ul>
       </li>
     </ul>
   </div>
@@ -22,15 +24,14 @@
         type: Object,
         required: true,
       },
-    },
-    data() {
-      return {
-        ranks: [ 0, 0, 0, 0 ],
-      };
+      rank: {
+        type: Array,
+        required: true,
+      },
     },
     methods: {
-      rank(i, j) {
-        this.ranks[i] = j;
+      onRank(i, j) {
+        this.rank[i] = j;
       },
     },
   }

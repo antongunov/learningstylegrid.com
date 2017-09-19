@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Question {{ currentQuestion }} of {{ totalQuestions }}</p>
+    <p>Sentence {{ currentSentence }} of {{ totalSentences }}</p>
   </div>
 </template>
 
@@ -8,11 +8,11 @@
   export default {
     name: 'Progress',
     props: {
-      currentQuestion: {
+      currentSentence: {
         type: Number,
         required: true,
       },
-      totalQuestions: {
+      totalSentences: {
         type: Number,
         required: true,
       },

@@ -1,18 +1,32 @@
 <template>
   <div>
-    <app-sentence :sentence="sentences[ndxSentence]"></app-sentence>
+    <app-progress
+      :current-sentence="currentIndexSentence + 1"
+      :total-sentences="sentences.length"
+    ></app-progress>
+    <app-timer
+      :seconds="300"
+    ></app-timer>
     <div>
-      <button @click="prev">Prev</button>
-      <button @click="next">Next</button>
+      <app-sentence
+        :sentence="sentences[currentIndexSentence]"
+        :rank="ranks[currentIndexSentence]"
+      ></app-sentence>
+      <div>
+        <button @click="onPrevSentence">Prev</button>
+        <button @click="onNextSentence">Next</button>
+      </div>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
+  import Progress from './Progress.vue';
+  import Timer from './Timer.vue';
   import Sentence from './Sentence.vue';
 
   export default {
-    name: 'Test',
+    name: 'Inventory',
     props: {
       sentences: {
         type: Array,
@@ -20,24 +34,54 @@
       },
     },
     data () {
+      const ranks = [];
+      let i = this.sentences.length;
+      while (i-- > 0) {
+        ranks.push([
+          0, // CE
+          0, // RO
+          0, // AC
+          0, // AE
+        ]);
+      }
       return {
-        ndxSentence: 0,
-        scores: [ 0, 0, 0, 0 ],
+        currentIndexSentence: 0,
+        ranks,
       };
     },
     methods: {
-      prev() {
-        if (this.ndxSentence > 0) {
-          this.ndxSentence--;
+      checkPrev() {
+        return this.currentIndexSentence > 0;
+      },
+      onPrevSentence() {
+        if (this.checkPrev()) {
+          this.currentIndexSentence--;
         }
       },
-      next() {
-        if (this.ndxSentence + 1 < this.sentences.length) {
-          this.ndxSentence++;
+      checkNext() {
+        return this.currentIndexSentence < this.sentences.length - 1;
+      },
+      checkRank() {
+        const check =
+          this.ranks[this.currentIndexSentence][0] > 0 &&
+          this.ranks[this.currentIndexSentence][1] > 0 &&
+          this.ranks[this.currentIndexSentence][2] > 0 &&
+          this.ranks[this.currentIndexSentence][3] > 0;
+        return check;
+      },
+      onNextSentence() {
+        if (this.checkRank()) {
+          if (this.checkNext()) {
+            this.currentIndexSentence++;
+          } else {
+            this.$emit('on-complete', [ ...this.ranks ]);
+          }
         }
       },
     },
     components: {
+      appProgress: Progress,
+      appTimer: Timer,
       appSentence: Sentence,
     },
   }
