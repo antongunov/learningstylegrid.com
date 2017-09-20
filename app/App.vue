@@ -9,6 +9,7 @@
     ></app-inventory>
     <app-grid v-else-if="currentCmp === 'app-grid'"
       :ranks="ranks"
+      @on-repeat="onRepeatInventory"
     ></app-grid>
   </div>
 </template>
@@ -37,6 +38,10 @@
       onCompleteInventory(ranks) {
         this.ranks = ranks;
         this.currentCmp = 'app-grid';
+      },
+      onRepeatInventory() {
+        this.ranks = null;
+        this.currentCmp = 'app-inventory';
       },
     },
     components: {

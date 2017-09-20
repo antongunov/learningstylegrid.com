@@ -4,6 +4,7 @@
     <ul>
       <li v-for="rank in ranks">{{ rank }}</li>
     </ul>
+    <button @click="onRepeat">Repeat</button>
   </div>
 </template>
 
@@ -16,6 +17,11 @@
         required: true,
       }
     },
+    methods: {
+      onRepeat() {
+        this.$emit('on-repeat');
+      },
+    }
   }
 </script>
 
