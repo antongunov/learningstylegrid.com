@@ -33,7 +33,7 @@
       this.counter = this.seconds;
       setTimeout(() => {
         const timerId = setInterval(() => {
-          this.counter -= 1;
+          this.counter--;
         }, 1000);
         setTimeout(() => {
           clearInterval(timerId);
