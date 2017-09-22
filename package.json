@@ -12,7 +12,7 @@
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && npm run public && webpack --progress --hide-modules",
     "dev": "npm run clean && npm run public && webpack-dev-server --open",
-    "public": "cp public/* build/"
+    "public": "cp -r public/* build/"
   },
   "dependencies": {
     "vue": "^2.4.2",
