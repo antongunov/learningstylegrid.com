@@ -45,7 +45,7 @@ module.exports = {
     contentBase: resolve('build/'),
     historyApiFallback: {
       rewrites: [
-        { from: /^\/app/, to: '/app/index.html' },
+        { from: /^\/app/, to: '/app.html' },
       ]
     },
   },
