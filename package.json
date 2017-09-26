@@ -10,7 +10,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm -rf build && mkdir build",
-    "pug": "pug -O '{ \"env\": {} }' pages/*.pug --out build/",
+    "pug": "pug -O 'pages/pug/pug.config.js' pages/*.pug --out build/",
     "build": "npm run clean && npm run pug && npm run public && webpack --progress --hide-modules",
     "dev": "npm run clean && npm run pug && npm run public && webpack-dev-server --open",
     "public": "cp -r public/* build/"
