@@ -1,6 +1,6 @@
 # Learning Style Grid
 
-Build your learning style grid.
+Build a learning style grid.
 
 ## License
 
