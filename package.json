@@ -9,16 +9,21 @@
   },
   "license": "MIT",
   "scripts": {
+    "build": "npm run static && webpack --progress --hide-modules",
     "clean": "rm -rf build && mkdir build",
-    "pug": "pug -O '{ \"env\": {} }' pages/*.pug --out build/",
-    "build": "npm run clean && npm run pug && npm run public && webpack --progress --hide-modules",
-    "dev": "npm run clean && npm run pug && npm run public && webpack-dev-server --open",
-    "public": "cp -r public/* build/"
+    "sass": "node-sass assets/sass/main.scss | postcss -o build/assets/css/main.css",
+    "static": "npm run clean && npm run public && npm run pug && npm run sass",
+    "dev": "npm run static && webpack-dev-server --inline --hot",
+    "public": "cp -r public/* build/",
+    "pug": "pug -O 'pages/pug/pug.config.js' pages/*.pug --out build/"
   },
   "dependencies": {
-    "vue": "^2.4.2"
+    "vue": "^2.4.2",
+    "vue-router": "^2.7.0",
+    "vuex": "^2.4.0"
   },
   "devDependencies": {
+    "autoprefixer": "^7.1.4",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.0",
@@ -26,6 +31,8 @@
     "dotenv": "^4.0.0",
     "file-loader": "^0.11.2",
     "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.1",
+    "postcss-normalize": "^4.0.0",
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
     "sass-loader": "^6.0.6",

@@ -1,57 +1,33 @@
 <template>
-  <div id="app">
-    <app-instructions v-if="currentCmp === 'app-instructions'"
-      @on-start="onStartInventory"
-    ></app-instructions>
-    <app-inventory v-else-if="currentCmp === 'app-inventory'"
-      :sentences="sentences"
-      @on-complete="onCompleteInventory"
-    ></app-inventory>
-    <app-grid v-else-if="currentCmp === 'app-grid'"
-      :ranks="ranks"
-      @on-repeat="onRepeatInventory"
-    ></app-grid>
-  </div>
+  <transition name="fade" mode="out-in">
+    <router-view></router-view>
+  </transition>
 </template>
 
 <script type="text/javascript">
-  import Instructions from './components/Instructions.vue';
-  import Inventory from './components/Inventory.vue';
-  import Grid from './components/Grid.vue';
-
   import sentences from './sentences.json';
 
   export default {
     name: 'App',
-    data () {
-      return {
-        currentCmp: 'app-instructions',
-        sentences,
-        ranks: null,
-      };
-    },
-    methods: {
-      onStartInventory() {
-        this.ranks = [];
-        this.currentCmp = 'app-inventory';
-      },
-      onCompleteInventory(ranks) {
-        this.ranks = ranks;
-        this.currentCmp = 'app-grid';
-      },
-      onRepeatInventory() {
-        this.ranks = null;
-        this.currentCmp = 'app-inventory';
-      },
-    },
-    components: {
-      appInstructions: Instructions,
-      appInventory: Inventory,
-      appGrid: Grid,
+    created() {
+      this.$store.dispatch('initRanks', sentences.length);
     },
   }
 </script>
 
 <style lang="scss" scoped>
-
+  .fade {
+    &-enter {
+      opacity: 0;
+      &-active {
+        transition: opacity .5s ease;
+      }
+    }
+    &-leave {
+      &-active {
+        transition: opacity .5s ease;
+        opacity: 0;
+      }
+    }
+  }
 </style>

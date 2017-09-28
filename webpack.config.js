@@ -43,5 +43,10 @@ module.exports = {
   },
   devServer: {
     contentBase: resolve('build/'),
+    historyApiFallback: {
+      rewrites: [
+        { from: /^\/app/, to: '/app.html' },
+      ]
+    },
   },
 };

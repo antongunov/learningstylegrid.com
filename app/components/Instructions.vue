@@ -1,20 +1,13 @@
 <template>
   <div>
     <h1>Instructions</h1>
-    <div>
-      <button @click="onStart">Start</button>
-    </div>
+    <router-link to="/app/inventory" tag="button">Inventory</router-link>
   </div>
 </template>
 
 <script type="text/javascript">
   export default {
     name: 'Instructions',
-    methods: {
-      onStart() {
-        this.$emit('on-start');
-      },
-    },
   }
 </script>
 
