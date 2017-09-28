@@ -3,10 +3,10 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-import sentences from './sentences.json';
+import ranks from './modules/ranks';
 
 export const store = new Vuex.Store({
-  state: {
-    sentences,
+  modules: {
+    ranks,
   },
 });

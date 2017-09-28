@@ -1,20 +1,12 @@
 <template>
   <div>
-    <app-progress
-      :current-sentence="currentIndexSentence + 1"
-      :total-sentences="sentences.length"
-    ></app-progress>
-    <app-timer
-      :seconds="300"
-    ></app-timer>
+    <app-progress :current-sentence="index + 1" :total-sentences="sentences.length"></app-progress>
+    <app-timer :seconds="300"></app-timer>
     <div>
-      <app-sentence
-        :sentence="sentences[currentIndexSentence]"
-        :rank="ranks[currentIndexSentence]"
-      ></app-sentence>
+      <app-sentence :sentence="sentences[index]" :rank="ranks[index]"></app-sentence>
       <div>
-        <button @click="onPrevSentence">Prev</button>
-        <button @click="onNextSentence">Next</button>
+        <button @click="prevSentence">Prev</button>
+        <button @click="nextSentence">Next</button>
       </div>
     </div>
   </div>
@@ -25,57 +17,38 @@
   import Timer from './Timer.vue';
   import Sentence from './Sentence.vue';
 
+  import { mapGetters } from 'vuex';
+
+  import sentences from '../sentences.json';
+
   export default {
     name: 'Inventory',
-    props: {
-      sentences: {
-        type: Array,
-        required: true,
-      },
-    },
     data () {
-      const ranks = [];
-      let i = this.sentences.length;
-      while (i-- > 0) {
-        ranks.push([
-          0, // CE
-          0, // RO
-          0, // AC
-          0, // AE
-        ]);
-      }
       return {
-        currentIndexSentence: 0,
-        ranks,
+        sentences,
+        index: 0,
       };
     },
+    computed: mapGetters([
+      'ranks',
+    ]),
     methods: {
       checkPrev() {
-        return this.currentIndexSentence > 0;
+        return this.index > 0;
       },
-      onPrevSentence() {
+      prevSentence() {
         if (this.checkPrev()) {
-          this.currentIndexSentence--;
+          this.index--;
         }
       },
       checkNext() {
-        return this.currentIndexSentence < this.sentences.length - 1;
+        return this.index < this.sentences.length - 1;
       },
-      checkRank() {
-        const check =
-          this.ranks[this.currentIndexSentence][0] > 0 &&
-          this.ranks[this.currentIndexSentence][1] > 0 &&
-          this.ranks[this.currentIndexSentence][2] > 0 &&
-          this.ranks[this.currentIndexSentence][3] > 0;
-        return check;
-      },
-      onNextSentence() {
-        if (this.checkRank()) {
-          if (this.checkNext()) {
-            this.currentIndexSentence++;
-          } else {
-            this.$emit('on-complete', [ ...this.ranks ]);
-          }
+      nextSentence() {
+        if (this.checkNext()) {
+          this.index++;
+        } else {
+          this.$router.push('/app/grid');
         }
       },
     },
