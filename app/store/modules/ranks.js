@@ -4,6 +4,8 @@ export default {
   },
   mutations: {
     initRanks: (state, count) => {
+      // prevent repetitive init
+      if (state.ranks.length > 0) return;
       let i = count;
       while (i-- > 0) {
         state.ranks.push([
