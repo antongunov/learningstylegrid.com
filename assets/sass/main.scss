@@ -2,4 +2,9 @@
 
 @import-normalize;
 
+@import 'utils/variables';
 @import 'base/base';
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
