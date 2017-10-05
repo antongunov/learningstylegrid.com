@@ -2,8 +2,11 @@
 
 @import-normalize;
 
+@import 'font-awesome/scss/font-awesome';
+
 @import 'utils/variables';
 @import 'base/base';
+
 @import 'layout/page';
 @import 'layout/header';
 @import 'layout/main';
