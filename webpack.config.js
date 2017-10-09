@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: resolve('build/assets/js/'),
     filename: 'main.js',
-    publicPath: !live ? 'assets/js/' : void 0,
+    publicPath: 'assets/js/',
   },
   module: {
     rules: [

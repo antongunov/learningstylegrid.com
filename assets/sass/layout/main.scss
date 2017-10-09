@@ -1,4 +1,12 @@
 .main {
   width: 100%;
   text-align: center;
+
+  &__title {
+    font-size: 3.5rem;
+  }
+
+  &__button {
+    color: $color-white;
+  }
 }

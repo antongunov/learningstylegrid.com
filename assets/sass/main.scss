@@ -5,9 +5,13 @@
 @import 'font-awesome/scss/font-awesome';
 
 @import 'utils/variables';
+
 @import 'base/base';
+@import 'base/typography';
 
 @import 'layout/page';
 @import 'layout/header';
 @import 'layout/main';
 @import 'layout/footer';
+
+@import 'components/coded-with-love-by';
