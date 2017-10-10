@@ -1,5 +1,13 @@
 html {
   font-size: $font-size;
+
+  @include desktop {
+    font-size: $font-size - 2px;
+  }
+
+  @include tablet {
+    font-size: $font-size - 4px;
+  }
 }
 
 body {
