@@ -4,4 +4,13 @@ block data
   - var title = "Learning Style Grid"
 
 block body
-  a(href= "/app") App
+  .page.page--bg-color-primary
+    .page__wrapper
+      header.page__header.header
+      main.page__content.main
+        .main__title
+          h1.title.title--main How Do I Learn?
+        .main__button
+          a(href= "/app").button.button--big-button.button--secondary Inventory My Style
+      footer.page__footer.footer
+        +coded-with-love-by("Anton G.", "https://github.com/antongunov")

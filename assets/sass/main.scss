@@ -2,4 +2,19 @@
 
 @import-normalize;
 
+@import 'font-awesome/scss/font-awesome';
+
+@import 'utils/variables';
+@import 'utils/mixins/breakpoints';
+
 @import 'base/base';
+@import 'base/typography';
+
+@import 'layout/page';
+@import 'layout/header';
+@import 'layout/main';
+@import 'layout/footer';
+
+@import 'components/coded-with-love-by';
+@import 'components/titles';
+@import 'components/buttons';

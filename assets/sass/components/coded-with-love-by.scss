@@ -1,0 +1,12 @@
+.coded-with-love-by {
+
+  &--color-red {
+    color: $color-red;
+  }
+
+  &__link {
+    color: inherit;
+    font-weight: 600;
+    text-decoration: none;
+  }
+}
