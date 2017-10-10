@@ -8,7 +8,9 @@ block body
     .page__wrapper
       header.page__header.header
       main.page__content.main
-        h1.main__title How Do I Learn?
-        a(href= "/app").main__button Inventory My Style
+        .main__title
+          h1.title.title--main How Do I Learn?
+        .main__button
+          a(href= "/app").button.button--big-button.button--secondary Inventory My Style
       footer.page__footer.footer
         +coded-with-love-by("Anton G.", "https://github.com/antongunov")

@@ -1,0 +1,37 @@
+.button {
+  border-radius: 2px;
+  border-style: none;
+  box-shadow: 0 2px rgba(0, 0, 0, .17);
+  color: inherit;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 600;
+  font-size: inherit;
+  padding: .5rem 1rem;
+
+  &:hover {
+    background-color: darken($color-white, 10);
+    transition: background-color .15s;
+  }
+
+  &:active {
+    box-shadow: 0 0 #fff;
+    transform: translateY(2px);
+  }
+
+  &--big-button {
+    font-size: 1.2rem;
+    font-weight: 500;
+    padding: .8rem 1.6rem;
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    color: darken($color-primary, 20);
+  }
+
+  &--primary {
+    background-color: darken($color-primary, 20);
+    color: $color-white;
+  }
+}
