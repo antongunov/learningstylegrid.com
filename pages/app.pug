@@ -7,4 +7,11 @@ block head
   script(src="/assets/js/main.js" defer)
 
 block body
-  #app
+  .page
+    .page__wrapper
+      header.page__header.header
+      main.page__content.main
+        .main__app
+          #app
+      footer.page__footer.footer
+        +coded-with-love-by("Anton G.", "https://github.com/antongunov")
