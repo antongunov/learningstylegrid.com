@@ -12,13 +12,11 @@ $ cd learningstylegrid.com
 $ npm install
 ```
 
-Copy `.env.example` to `.env` and set your settings.
+Run one of the next `npm` commands:
 
-Run `npm run dev` for developing or `npm run build` for production.
-
-## How to Run
-
-Run `npm start` for building and serving static files.
+* `npm start` for building assets and locally serving static files;
+* `npm run dev` for developing;
+* `npm run build` for production.
 
 ## License
 
