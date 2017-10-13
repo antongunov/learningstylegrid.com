@@ -9,16 +9,17 @@
   },
   "license": "MIT",
   "scripts": {
-    "app": "mkdir build/app && mv build/app.html build/app/index.html",
+    "app": "mkdir -p build/app && mv build/app.html build/app/index.html",
     "build": "npm run static && webpack --progress --hide-modules",
     "clean": "rm -rf build && mkdir build",
-    "sass": "node-sass --include-path node_modules/ assets/sass/main.scss | postcss -o build/assets/css/main.css",
-    "start": "npm run build && static build",
-    "static": "npm run clean && npm run public && npm run fonts && npm run pug && npm run sass && npm run app",
     "dev": "npm run static && webpack-dev-server --inline --hot",
     "fonts": "mkdir -p build/assets/fonts/ && cp -r node_modules/font-awesome/fonts/* build/assets/fonts/",
+    "img": "mkdir -p build/assets/img && cp -r assets/img/* build/assets/img/",
     "public": "cp -r public/* build/",
-    "pug": "pug -O 'pages/pug/pug.config.js' pages/*.pug --out build/"
+    "pug": "pug -O 'pages/pug/pug.config.js' pages/*.pug --out build/",
+    "sass": "node-sass --include-path node_modules/ assets/sass/main.scss | postcss -o build/assets/css/main.css",
+    "start": "npm run build && static build",
+    "static": "npm run clean && npm run public && npm run img && npm run fonts && npm run pug && npm run sass && npm run app"
   },
   "dependencies": {
     "font-awesome": "^4.7.0",

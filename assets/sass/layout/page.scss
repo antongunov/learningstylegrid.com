@@ -27,4 +27,8 @@
   &--bg-color-primary {
     background-color: $color-primary;
   }
+
+  &--bg-pattern {
+    background: rgba(0, 0, 0, 0) url(/assets/img/gplaypattern.png) repeat scroll 0 0;
+  }
 }
