@@ -1,6 +1,6 @@
 # Learning Style Grid
 
-Build a learning style grid.
+[Learning Style Grid](http://learningstylegrid.com) is an online tool to build a learning style grid using Kolb's inventory.
 
 ## How to Install
 
