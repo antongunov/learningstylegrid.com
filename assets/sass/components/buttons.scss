@@ -1,37 +1,36 @@
+/**
+ * 1. Fix impacting of links style.
+ */
+
+
 .button {
   border-radius: 2px;
   border-style: none;
-  box-shadow: 0 2px rgba(0, 0, 0, .17);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .17);
   color: inherit;
   cursor: pointer;
   font-family: inherit;
-  font-weight: 600;
+  font-weight: 400;
   font-size: inherit;
-  padding: .5rem 1rem;
+  padding: .6rem 1.15rem;
 
-  &:hover {
-    background-color: darken($color-white, 10);
-    transition: background-color .15s;
-  }
+  margin: inherit;
 
   &:active {
-    box-shadow: 0 0 #fff;
-    transform: translateY(2px);
+    padding: .6rem 1.1rem .6rem 1.2rem;
   }
 
-  &--big-button {
-    font-size: 1.2rem;
-    font-weight: 500;
-    padding: .8rem 1.6rem;
-  }
-
-  &--secondary {
-    background-color: $color-white;
-    color: darken($color-primary, 20);
+  &:hover {
+    border-style: none; /* 1 */
   }
 
   &--primary {
     background-color: darken($color-primary, 20);
     color: $color-white;
+  }
+
+  &--secondary {
+    background-color: $color-white;
+    color: darken($color-primary, 20);
   }
 }
