@@ -17,6 +17,11 @@ body {
   text-rendering: optimizelegibility;
 }
 
+h1 {
+  font-size: 2.5rem;
+  padding-bottom: 1rem;
+}
+
 a {
   border-bottom: 1px dotted;
   color: darken($color-primary, 10);
