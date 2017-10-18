@@ -14,11 +14,13 @@ body {
   color: $color-black;
   font-family: $font-stack;
   font-size: 1rem;
+  line-height: $font-height;
   text-rendering: optimizelegibility;
 }
 
 h1 {
   font-size: 2.5rem;
+  line-height: $font-height * 3 / 4;
   padding-bottom: 1rem;
 }
 

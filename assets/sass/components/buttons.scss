@@ -25,12 +25,24 @@
   }
 
   &--primary {
-    background-color: darken($color-primary, 20);
+    background-color: darken($color-primary, 10);
     color: $color-white;
+
+    &:hover {
+      background-color: darken($color-primary, 15);
+      transition: .3s;
+    }
   }
 
   &--secondary {
     background-color: $color-white;
-    color: darken($color-primary, 20);
+    color: darken($color-primary, 10);
+
+    font-weight: 600;
+
+    &:hover {
+      background-color: darken($color-white, 5);
+      transition: .3s;
+    }
   }
 }
