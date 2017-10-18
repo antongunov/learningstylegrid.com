@@ -7,9 +7,9 @@
 Clone this repository and install dependencies:
 
 ```bash
-$ git clone https://github.com/antongunov/learningstylegrid.com.git
-$ cd learningstylegrid.com
-$ npm install
+git clone https://github.com/antongunov/learningstylegrid.com.git
+cd learningstylegrid.com
+npm install
 ```
 
 Run one of the next `npm` commands:
