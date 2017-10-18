@@ -20,12 +20,12 @@
     &-enter {
       opacity: 0;
       &-active {
-        transition: opacity .5s ease;
+        transition: opacity .3s ease;
       }
     }
     &-leave {
       &-active {
-        transition: opacity .5s ease;
+        transition: opacity .3s ease;
         opacity: 0;
       }
     }
