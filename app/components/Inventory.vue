@@ -3,8 +3,12 @@
     <div>
       <app-sentence :sentence="sentences[index]" :scores="scores[index]"></app-sentence>
       <div class="inventory__buttons">
-        <button @click="prevSentence" class="button button--secondary">← Prev</button>
-        <button @click="nextSentence" class="button button--primary">Next →</button>
+        <button class="button button--secondary" @click="prevSentence">
+          ← {{ checkPrev ? 'Prev' : 'Instructions' }}
+        </button>
+        <button class="button button--primary" @click="nextSentence">
+          {{ checkNext ? 'Next' : 'Build Grid' }} →
+        </button>
       </div>
     </div>
   </div>
@@ -14,8 +18,6 @@
   import Progress from './Progress.vue';
   import Timer from './Timer.vue';
   import Sentence from './Sentence.vue';
-
-  import { mapGetters } from 'vuex';
 
   import sentences from '../sentences.json';
 
@@ -27,30 +29,32 @@
         index: 0,
       };
     },
-    computed: mapGetters([
-      'scores',
-    ]),
+    computed: {
+      scores() {
+        return this.$store.getters.scores;
+      },
+      checkPrev() {
+        return this.index > 0;
+      },
+      checkNext() {
+        return this.index < this.sentences.length - 1;
+      },
+    },
     components: {
       appProgress: Progress,
       appTimer: Timer,
       appSentence: Sentence,
     },
     methods: {
-      checkPrev() {
-        return this.index > 0;
-      },
       prevSentence() {
-        if (this.checkPrev()) {
+        if (this.checkPrev) {
           this.index--;
         } else {
-          this.$router.push('/app');
+          this.$router.push('/app/instructions');
         }
       },
-      checkNext() {
-        return this.index < this.sentences.length - 1;
-      },
       nextSentence() {
-        if (this.checkNext()) {
+        if (this.checkNext) {
           this.index++;
         } else {
           this.$router.push('/app/grid');

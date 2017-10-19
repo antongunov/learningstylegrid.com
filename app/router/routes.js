@@ -4,7 +4,7 @@ import Grid from '../components/Grid.vue';
 
 export const routes = [
   {
-    path: '/app',
+    path: '/app/instructions',
     component: Instructions,
   },
   {
@@ -15,4 +15,8 @@ export const routes = [
     path: '/app/grid',
     component: Grid,
   },
+  {
+    path: '/app',
+    redirect: '/app/instructions',
+  }
 ];
