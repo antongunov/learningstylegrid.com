@@ -66,17 +66,20 @@
 
   .rank-button {
     $border-size: .2rem;
+    $scale: 1.2;
+    $size: ($font-height + 2 * $border-size) * $scale;
 
     background-color: $color-white;
-    border-radius: $font-height / 2 + $border-size;
+    border-radius: 50%;
     border: $border-size solid darken($color-primary, 10);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .17);
     color: $color-black;
     display: block;
+    height: $size;
+    line-height: $font-height * $scale;
     margin: 0 .3rem;
     text-align: center;
-    width: $font-height + 2 * $border-size;
-
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .17);
+    width: $size;
 
     &:hover {
       background-color: darken($color-primary, 10);
