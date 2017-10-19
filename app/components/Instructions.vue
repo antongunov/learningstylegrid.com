@@ -38,7 +38,6 @@
     &__list {
       counter-reset: li;
       display: table;
-      list-style: none;
       margin: 0 auto;
       max-width: 340px;
       padding: 0 0 3rem 0;
@@ -55,7 +54,7 @@
 
     &:before {
       background-color: $color-black;
-      border-radius: $font-height / 2 + rem;
+      border-radius: 50%;
       color: $color-white;
       content: counter(li);
       counter-increment: li;
@@ -66,7 +65,7 @@
 
     &__text {
       display: table-cell;
-      padding: 0 0 1rem 1rem;
+      padding: 0 0 1.5rem 1rem;
     }
   }
 </style>
