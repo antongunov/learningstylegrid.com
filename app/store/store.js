@@ -3,10 +3,10 @@ import Vuex from 'vuex';
 
 Vue.use(Vuex);
 
-import ranks from './modules/ranks';
+import scores from './modules/scores';
 
 export const store = new Vuex.Store({
   modules: {
-    ranks,
+    scores,
   },
 });

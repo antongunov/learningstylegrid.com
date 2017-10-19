@@ -10,7 +10,7 @@
   export default {
     name: 'App',
     created() {
-      this.$store.dispatch('initRanks', sentences.length);
+      this.$store.dispatch('initScores', sentences.length);
     },
   }
 </script>

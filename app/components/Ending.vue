@@ -3,10 +3,14 @@
     <div class="ending__text">
       <p>{{ text }}</p>
     </div>
-    <div class="ending__buttons">
-      <ul class="rank-buttons rank-buttons__list">
-        <li v-for="i in 4" class="rank-buttons__item">
-          <a @click="updateRank(i)" class="rank-button" :class="{ 'rank-button--ranked': i === mutableRank }">{{ i }}</a>
+    <div class="ending__score-buttons">
+      <ul class="score-buttons score-buttons__list">
+        <li v-for="score in 4" class="score-buttons__item">
+          <a
+            @click="rank(score)"
+            class="score-button"
+            :class="{ 'score-button--ranked': score === endingScore }"
+          >{{ score }}</a>
         </li>
       </ul>
     </div>
@@ -21,22 +25,25 @@
         type: String,
         required: true,
       },
-      rank: {
+      score: {
         type: Number,
-        default() {
-          return 0;
-        },
+        default() { return 0; },
       },
     },
     data() {
       return {
-        mutableRank: this.rank,
+        endingScore: this.score,
       };
     },
+    watch: {
+      score: function () {
+        this.endingScore = this.score;
+      },
+    },
     methods: {
-      updateRank(rank) {
-        this.mutableRank = this.mutableRank === rank ? 0 : rank;
-        this.$emit('update-rank', rank);
+      rank(score) {
+        this.endingScore = this.endingScore === score ? 0 : score;
+        this.$emit('rank', this.endingScore);
       },
     },
   }
@@ -48,12 +55,12 @@
 
     }
 
-    &__buttons {
+    &__score-buttons {
       margin-bottom: 1rem;
     }
   }
 
-  .rank-buttons {
+  .score-buttons {
     &__list {
 
     }
@@ -64,7 +71,7 @@
     }
   }
 
-  .rank-button {
+  .score-button {
     $border-size: .2rem;
     $scale: 1.2;
     $size: ($font-height + 2 * $border-size) * $scale;

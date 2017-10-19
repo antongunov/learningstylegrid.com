@@ -1,47 +1,47 @@
 [
   {
     "begin": "#1. Begin sentence...",
-    "endings": [
-      "...ending (A)",
-      "...ending (B)",
-      "...ending (C)",
-      "...ending (D)"
-    ]
+    "endings": {
+      "CE": "...ending (CE)",
+      "RO": "...ending (RO)",
+      "AC": "...ending (AC)",
+      "AE": "...ending (AE)"
+    }
   },
   {
     "begin": "#2. Begin sentence...",
-    "endings": [
-      "...ending (A)",
-      "...ending (B)",
-      "...ending (C)",
-      "...ending (D)"
-    ]
+    "endings": {
+      "CE": "...ending (CE)",
+      "RO": "...ending (RO)",
+      "AC": "...ending (AC)",
+      "AE": "...ending (AE)"
+    }
   },
   {
     "begin": "#3. Begin sentence...",
-    "endings": [
-      "...ending (A)",
-      "...ending (B)",
-      "...ending (C)",
-      "...ending (D)"
-    ]
+    "endings": {
+      "CE": "...ending (CE)",
+      "RO": "...ending (RO)",
+      "AC": "...ending (AC)",
+      "AE": "...ending (AE)"
+    }
   },
   {
     "begin": "#4. Begin sentence...",
-    "endings": [
-      "...ending (A)",
-      "...ending (B)",
-      "...ending (C)",
-      "...ending (D)"
-    ]
+    "endings": {
+      "CE": "...ending (CE)",
+      "RO": "...ending (RO)",
+      "AC": "...ending (AC)",
+      "AE": "...ending (AE)"
+    }
   },
   {
     "begin": "#5. Begin sentence...",
-    "endings": [
-      "...ending (A)",
-      "...ending (B)",
-      "...ending (C)",
-      "...ending (D)"
-    ]
+    "endings": {
+      "CE": "...ending (CE)",
+      "RO": "...ending (RO)",
+      "AC": "...ending (AC)",
+      "AE": "...ending (AE)"
+    }
   }
 ]

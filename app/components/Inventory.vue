@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <app-progress :current-sentence="index + 1" :total-sentences="sentences.length"></app-progress>
-    <app-timer :seconds="300"></app-timer>
+  <div class="inventory">
     <div>
-      <app-sentence :sentence="sentences[index]" :rank="ranks[index]"></app-sentence>
-      <div>
-        <button @click="prevSentence">Prev</button>
-        <button @click="nextSentence">Next</button>
+      <app-sentence :sentence="sentences[index]" :scores="scores[index]"></app-sentence>
+      <div class="inventory__buttons">
+        <button @click="prevSentence" class="button button--secondary">← Prev</button>
+        <button @click="nextSentence" class="button button--primary">Next →</button>
       </div>
     </div>
   </div>
@@ -30,8 +28,13 @@
       };
     },
     computed: mapGetters([
-      'ranks',
+      'scores',
     ]),
+    components: {
+      appProgress: Progress,
+      appTimer: Timer,
+      appSentence: Sentence,
+    },
     methods: {
       checkPrev() {
         return this.index > 0;
@@ -39,6 +42,8 @@
       prevSentence() {
         if (this.checkPrev()) {
           this.index--;
+        } else {
+          this.$router.push('/app');
         }
       },
       checkNext() {
@@ -52,14 +57,13 @@
         }
       },
     },
-    components: {
-      appProgress: Progress,
-      appTimer: Timer,
-      appSentence: Sentence,
-    },
   }
 </script>
 
 <style lang="scss" scoped>
-
+  .inventory {
+    &__buttons {
+      margin: 1.5rem .15rem 0;
+    }
+  }
 </style>

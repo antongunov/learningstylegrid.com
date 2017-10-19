@@ -2,12 +2,12 @@
   <div>
     <h1>Grid</h1>
     <ul>
-      <li>CE = {{ total[0] }}</li>
-      <li>RO = {{ total[1] }}</li>
-      <li>AC = {{ total[2] }}</li>
-      <li>CE = {{ total[3] }}</li>
+      <li>CE = {{ total.CE }}</li>
+      <li>RO = {{ total.RO }}</li>
+      <li>AC = {{ total.AC }}</li>
+      <li>CE = {{ total.CE }}</li>
     </ul>
-    <router-link to="/app/inventory" tag="button">Inventory</router-link>
+    <router-link to="/app/inventory" tag="button" class="button button--secondary">← Inventory</router-link>
   </div>
 </template>
 
@@ -16,14 +16,14 @@
     name: 'Grid',
     computed: {
       total() {
-        const total = [ 0, 0, 0, 0 ];
-        this.$store.getters.ranks.forEach((rank) => {
-          total[0] += rank[0]; // CE
-          total[1] += rank[1]; // RO
-          total[2] += rank[2]; // AC
-          total[3] += rank[3]; // AE
+        let [ CE, RO, AC, AE ] = [ 0, 0, 0, 0];
+        this.$store.getters.scores.forEach((sentenceScores) => {
+          CE += sentenceScores.CE;
+          RO += sentenceScores.RO;
+          AC += sentenceScores.AC;
+          AE += sentenceScores.AE;
         });
-        return total;
+        return { CE, RO, AC, AE };
       },
     },
   }
