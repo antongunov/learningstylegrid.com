@@ -2,7 +2,6 @@
  * 1. Fix impacting of links style.
  */
 
-
 .button {
   border-radius: 2px;
   border-style: none;
@@ -12,12 +11,12 @@
   font-family: inherit;
   font-weight: 400;
   font-size: inherit;
-  padding: .6rem 1.15rem;
+  padding: .7rem 1.15rem;
 
   margin: inherit;
 
   &:active {
-    padding: .6rem 1.1rem .6rem 1.2rem;
+
   }
 
   &:hover {

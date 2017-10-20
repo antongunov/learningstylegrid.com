@@ -12,9 +12,11 @@
 
 @import 'layout/page';
 @import 'layout/header';
+@import 'layout/nav';
 @import 'layout/main';
 @import 'layout/footer';
 
-@import 'components/coded-with-love-using';
-@import 'components/titles';
 @import 'components/buttons';
+@import 'components/coded-with-love-using';
+@import 'components/nav-links';
+@import 'components/titles';

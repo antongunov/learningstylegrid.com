@@ -1,12 +1,16 @@
 extends pug/page
 
 block data
-  - var title = "Learning Style Grid"
+  - var title = "Learning Style Grid — Online tool to build a learning style grid using Kolb's inventory"
 
 block body
   .page.page--bg-color-primary
     .page__wrapper
       header.page__header.header
+        nav.nav
+          ul.nav__list
+            li.nav__item.nav__item--right
+              +nav-link-github("style-home")
       main.page__content.main
         .main__title
           h1.title.title--main How Do I Learn?

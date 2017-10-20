@@ -1,7 +1,7 @@
 extends pug/page
 
 block data
-  - var title = "Learning Style Grid"
+  - var title = "App | Learning Style Grid"
 
 block head
   script(src="/assets/js/main.js" defer)
@@ -10,6 +10,10 @@ block body
   .page.page--bg-pattern
     .page__wrapper
       header.page__header.header
+        nav.nav
+          ul.nav__list
+            li.nav__item.nav__item--right
+              +nav-link-github("style-app")
       main.page__content.main
         .main__app
           #app

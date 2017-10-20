@@ -1,0 +1,38 @@
+/**
+ * 1. Fix shifting when made bold on hover.
+ */
+
+.nav-link {
+  background-color: $color-white;
+  border-radius: 5px;
+  border-style: none;
+  color: inherit;
+  cursor: pointer;
+  display: inline-block;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 400;
+  padding: .6rem 1.15rem;
+
+  &:focus,
+  &:hover {
+    border-style: none;
+    font-weight: 600;
+    margin: 0 -1px; /* 1 */
+  }
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--style-home {
+    background-color: $color-primary;
+    color: $color-white;
+  }
+
+  &--style-app {
+    background-color: rgba(0, 0, 0, 0);
+    // color: darken($color-primary, 10);
+    color: $color-black;
+  }
+}
