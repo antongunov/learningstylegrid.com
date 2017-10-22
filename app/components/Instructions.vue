@@ -60,7 +60,9 @@
       counter-increment: li;
       display: block;
       text-align: center;
-      width: $font-height + rem;
+      width: $font-height + .2rem;
+
+      line-height: $font-height + .2rem;
     }
 
     &__text {

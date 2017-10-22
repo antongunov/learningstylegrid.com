@@ -1,32 +1,40 @@
 <template>
   <div class="inventory">
-    <div>
-      <app-sentence :sentence="sentences[index]" :scores="scores[index]"></app-sentence>
-      <div class="inventory__buttons">
-        <button class="button button--secondary" @click="prevSentence">
-          ← {{ checkPrev ? 'Prev' : 'Instructions' }}
-        </button>
-        <button class="button button--primary" @click="nextSentence">
-          {{ checkNext ? 'Next' : 'Build Grid' }} →
-        </button>
-      </div>
+    <div class="inventory_sentence">
+      <transition name="fade" mode="out-in">
+        <app-sentence
+          :sentence="sentences[sentenceIndex]"
+          :scores="scores[sentenceIndex]"
+          :key="sentenceIndex"></app-sentence>
+      </transition>
+    </div>
+    <div class="inventory__buttons">
+      <button class="button button--secondary" @click="prevSentence">
+        ← {{ checkPrev ? 'Prev' : 'Instructions' }}
+      </button>
+      <button class="button button--primary" @click="nextSentence">
+        {{ checkNext ? 'Next' : 'Build Grid' }} →
+      </button>
     </div>
   </div>
 </template>
 
 <script type="text/javascript">
-  import Progress from './Progress.vue';
-  import Timer from './Timer.vue';
   import Sentence from './Sentence.vue';
-
   import sentences from '../sentences.json';
 
   export default {
     name: 'Inventory',
+    props: {
+      sentenceNumber: {
+        type: String,
+        required: true,
+      },
+    },
     data () {
       return {
         sentences,
-        index: 0,
+        sentenceIndex: Number.parseInt(this.sentenceNumber, 10) - 1,
       };
     },
     computed: {
@@ -34,28 +42,31 @@
         return this.$store.getters.scores;
       },
       checkPrev() {
-        return this.index > 0;
+        return this.sentenceIndex > 0;
       },
       checkNext() {
-        return this.index < this.sentences.length - 1;
+        return this.sentenceIndex < this.sentences.length - 1;
+      },
+    },
+    watch: {
+      sentenceNumber: function () {
+        this.sentenceIndex = Number.parseInt(this.sentenceNumber, 10) - 1;
       },
     },
     components: {
-      appProgress: Progress,
-      appTimer: Timer,
       appSentence: Sentence,
     },
     methods: {
       prevSentence() {
         if (this.checkPrev) {
-          this.index--;
+          this.$router.push(`/app/inventory/sentence-${this.sentenceIndex}`);
         } else {
           this.$router.push('/app/instructions');
         }
       },
       nextSentence() {
         if (this.checkNext) {
-          this.index++;
+          this.$router.push(`/app/inventory/sentence-${this.sentenceIndex + 2}`);
         } else {
           this.$router.push('/app/grid');
         }
@@ -66,6 +77,10 @@
 
 <style lang="scss" scoped>
   .inventory {
+    &__sentence {
+
+    }
+
     &__buttons {
       margin: 1.5rem .15rem 0;
     }

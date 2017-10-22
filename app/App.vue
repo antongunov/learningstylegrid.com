@@ -16,18 +16,5 @@
 </script>
 
 <style lang="scss" scoped>
-  .fade {
-    &-enter {
-      opacity: 0;
-      &-active {
-        transition: opacity .3s ease;
-      }
-    }
-    &-leave {
-      &-active {
-        transition: opacity .3s ease;
-        opacity: 0;
-      }
-    }
-  }
+
 </style>
