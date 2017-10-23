@@ -1,5 +1,3 @@
-import Vue from 'vue';
-
 const state = {
   scores: [],
 };
@@ -18,7 +16,7 @@ const mutations = {
     });
   },
   updateScores: (state, { sentenceNumber, sentenceScores }) => {
-    Vue.set(state.scores, sentenceNumber - 1, Object.assign({}, sentenceScores));
+    state.scores.splice(sentenceNumber - 1, 1, Object.assign({}, sentenceScores));
   },
 };
 
@@ -28,7 +26,7 @@ const actions = {
 };
 
 const getters = {
-  scores: state => state.scores,
+  sentenceScores: state => sentenceNumber => state.scores[sentenceNumber - 1],
   totalScores: (state) => {
     return state.scores.reduce((totals, sentenceScores) => {
       totals.CE += sentenceScores.CE;

@@ -4,7 +4,7 @@
       <transition name="fade" mode="out-in">
         <app-sentence
           :sentence="sentences[sentenceIndex]"
-          :scores="scores[sentenceIndex]"
+          :scores="sentenceScores"
           :number="sentenceNumber"
           :key="sentenceIndex"
           @sentence-rank="sentenceRank"></app-sentence>
@@ -39,11 +39,11 @@
       };
     },
     computed: {
+      sentenceScores() {
+        return this.$store.getters.sentenceScores(this.sentenceNumber);
+      },
       sentenceIndex() {
         return this.sentenceNumber - 1;
-      },
-      scores() {
-        return this.$store.getters.scores;
       },
       checkPrev() {
         return this.sentenceNumber > 1;
