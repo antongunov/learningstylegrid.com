@@ -1,6 +1,6 @@
 <template>
   <div class="sentence">
-    <h1 class="sentence__title">{{ sentence.begin }}</h1>
+    <h1 class="sentence__title">{{ title }}</h1>
     <ul>
       <li v-for="(ending, style) in sentence.endings" >
         <app-ending
@@ -27,11 +27,20 @@
         type: Object,
         required: true,
       },
+      number: {
+        type: Number,
+        required: true,
+      },
     },
     data() {
       return {
         sentenceScores: Object.assign({}, this.scores),
       };
+    },
+    computed: {
+      title() {
+        return `#${this.number}. ${this.sentence.begin}...`;
+      },
     },
     methods: {
       rank(rankStyle, score) {

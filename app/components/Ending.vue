@@ -1,7 +1,7 @@
 <template>
   <div class="ending">
     <div class="ending__text">
-      <p>{{ text }}</p>
+      <p>...{{ text }}</p>
     </div>
     <div class="ending__score-buttons">
       <ul class="score-buttons score-buttons__list">

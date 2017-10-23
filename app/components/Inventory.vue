@@ -5,6 +5,7 @@
         <app-sentence
           :sentence="sentences[sentenceIndex]"
           :scores="scores[sentenceIndex]"
+          :number="sentenceIndex + 1"
           :key="sentenceIndex"></app-sentence>
       </transition>
     </div>
