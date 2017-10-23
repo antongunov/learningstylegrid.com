@@ -1,3 +1,5 @@
+import Vue from 'vue';
+
 const state = {
   scores: [],
 };
@@ -16,7 +18,7 @@ const mutations = {
     });
   },
   updateScores: (state, { sentenceNumber, sentenceScores }) => {
-    state.scores[sentenceNumber - 1] = Object.assign({}, sentenceScores);
+    Vue.set(state.scores, sentenceNumber - 1, Object.assign({}, sentenceScores));
   },
 };
 
@@ -27,6 +29,15 @@ const actions = {
 
 const getters = {
   scores: state => state.scores,
+  totalScores: (state) => {
+    return state.scores.reduce((totals, sentenceScores) => {
+      totals.CE += sentenceScores.CE;
+      totals.RO += sentenceScores.RO;
+      totals.AC += sentenceScores.AC;
+      totals.AE += sentenceScores.AE;
+      return totals;
+    }, { CE: 0, RO: 0, AC: 0, AE: 0 });
+  },
 };
 
 export default {
