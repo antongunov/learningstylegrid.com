@@ -43,7 +43,7 @@
     methods: {
       rank(score) {
         this.endingScore = this.endingScore === score ? 0 : score;
-        this.$emit('rank', this.endingScore);
+        this.$emit('ending-rank', this.endingScore);
       },
     },
   }

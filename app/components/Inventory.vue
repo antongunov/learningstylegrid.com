@@ -5,8 +5,9 @@
         <app-sentence
           :sentence="sentences[sentenceIndex]"
           :scores="scores[sentenceIndex]"
-          :number="sentenceIndex + 1"
-          :key="sentenceIndex"></app-sentence>
+          :number="sentenceNumber"
+          :key="sentenceIndex"
+          @sentence-rank="sentenceRank"></app-sentence>
       </transition>
     </div>
     <div class="inventory__buttons">
@@ -28,30 +29,27 @@
     name: 'Inventory',
     props: {
       sentenceNumber: {
-        type: String,
+        type: Number,
         required: true,
       },
     },
     data () {
       return {
         sentences,
-        sentenceIndex: Number.parseInt(this.sentenceNumber, 10) - 1,
       };
     },
     computed: {
+      sentenceIndex() {
+        return this.sentenceNumber - 1;
+      },
       scores() {
         return this.$store.getters.scores;
       },
       checkPrev() {
-        return this.sentenceIndex > 0;
+        return this.sentenceNumber > 1;
       },
       checkNext() {
-        return this.sentenceIndex < this.sentences.length - 1;
-      },
-    },
-    watch: {
-      sentenceNumber: function () {
-        this.sentenceIndex = Number.parseInt(this.sentenceNumber, 10) - 1;
+        return this.sentenceNumber < this.sentences.length;
       },
     },
     components: {
@@ -60,18 +58,24 @@
     methods: {
       prevSentence() {
         if (this.checkPrev) {
-          this.$router.push(`/app/inventory/sentence-${this.sentenceIndex}`);
+          this.$router.push(`/app/inventory/sentence-${this.sentenceNumber - 1}`);
         } else {
           this.$router.push('/app/instructions');
         }
       },
       nextSentence() {
         if (this.checkNext) {
-          this.$router.push(`/app/inventory/sentence-${this.sentenceIndex + 2}`);
+          this.$router.push(`/app/inventory/sentence-${this.sentenceNumber + 1}`);
         } else {
           this.$router.push('/app/grid');
         }
       },
+      sentenceRank(sentenceScores) {
+        this.$store.dispatch('updateScores', {
+          sentenceNumber: this.sentenceNumber,
+          sentenceScores,
+        });
+      }
     },
   }
 </script>

@@ -6,7 +6,7 @@
         <app-ending
           :text="sentence.endings[style]"
           :score="sentenceScores[style]"
-          @rank="rank(style, $event)"
+          @ending-rank="endingRank(style, $event)"
         ></app-ending>
       </li>
     </ul>
@@ -43,13 +43,14 @@
       },
     },
     methods: {
-      rank(rankStyle, score) {
+      endingRank(rankStyle, score) {
         this.sentenceScores[rankStyle] = score;
         Object.keys(this.sentenceScores).forEach(style => {
           if (style !== rankStyle && this.sentenceScores[style] === score) {
             this.sentenceScores[style] = 0;
           }
         });
+        this.$emit('sentence-rank', this.sentenceScores);
       },
     },
     components: {

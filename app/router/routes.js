@@ -10,7 +10,9 @@ export const routes = [
   {
     path: '/app/inventory/sentence-:sentenceNumber',
     component: Inventory,
-    props: true,
+    props: ({ params }) => ({
+      sentenceNumber: Number.parseInt(params.sentenceNumber, 10),
+    }),
   },
   {
     path: '/app/inventory',
