@@ -23,6 +23,8 @@
   },
   "dependencies": {
     "font-awesome": "^4.7.0",
+    "svg-radar-chart": "^0.2.0",
+    "virtual-dom-stringify": "^3.0.1",
     "vue": "^2.4.2",
     "vue-router": "^2.7.0",
     "vuex": "^2.4.0"

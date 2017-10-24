@@ -36,6 +36,7 @@ const getters = {
       return totals;
     }, { CE: 0, RO: 0, AC: 0, AE: 0 });
   },
+  countScores: state => state.scores.length,
 };
 
 export default {

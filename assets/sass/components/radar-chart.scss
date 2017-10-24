@@ -1,0 +1,21 @@
+.radar-chart {
+  &__axis {
+    stroke: $color-black;
+    stroke-width: .1;
+  }
+
+  &__scale {
+    fill: $color-white;
+    stroke: lighten($color-black, 10);
+    stroke-width: .1;
+  }
+
+  &__shape {
+    fill-opacity: .3;
+    stroke-width: .5;
+
+    &:hover {
+      fill-opacity: .6;
+    }
+  }
+}
