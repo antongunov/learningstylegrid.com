@@ -5,7 +5,7 @@
       <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" v-html="svgRadarChart"></svg>
     </div>
     <div class="grid__buttons">
-      <router-link to="/app/inventory" tag="button" class="button button--secondary">← Inventory</router-link>
+      <button class="button button--secondary" @click="backInventory">← Inventory</button>
     </div>
   </div>
 </template>
@@ -73,6 +73,14 @@
       },
       scoreTotal() {
         return this.$store.getters.scoreTotal;
+      },
+      sentenceCount() {
+        return this.$store.getters.sentenceCount;
+      },
+    },
+    methods: {
+      backInventory() {
+        this.$router.push(`/app/inventory/sentence-${this.sentenceCount}`);
       },
     },
     mounted () {
