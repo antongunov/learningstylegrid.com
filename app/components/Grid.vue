@@ -1,8 +1,13 @@
 <template>
   <div class="grid">
     <h1>Learning Style Grid</h1>
-    <div class="grid__radar-chart">
-      <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" v-html="svgRadarChart"></svg>
+    <div class="grid__error-message" v-if="scoreSum !== (1 + 2 + 3 + 4) * scoreCount">
+      <p>Sorry, but you did not rank all sentences <i class="fa fa-lg fa-frown-o"></i></p>
+    </div>
+    <div v-else>
+      <div class="grid__radar-chart">
+        <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" v-html="svgRadarChart"></svg>
+      </div>
     </div>
     <div class="grid__buttons">
       <button class="button button--secondary" @click="backInventory">← Inventory</button>
@@ -23,7 +28,7 @@
 
   const renderOptions = {
     axes: true,
-    scales: 8,
+    scales: 0,
     size: 100,
     // remove captions and free space
     captions: false,
@@ -77,6 +82,9 @@
       sentenceCount() {
         return this.$store.getters.sentenceCount;
       },
+      scoreSum() {
+        return this.$store.getters.scoreSum;
+      },
     },
     methods: {
       backInventory() {
@@ -92,6 +100,18 @@
 
 <style lang="scss" scoped>
   .grid {
+    &__error-message {
+      color: $color-red;
+      font-weight: 600;
+
+      i {
+        background-color: $color-white;
+        border-radius: 50%;
+        color: $color-red;
+        font-size: 1.5rem;
+      }
+    }
+
     &__radar-chart {
       margin: 0 auto;
       max-width: 25rem;

@@ -31,6 +31,11 @@ const getters = {
       return total;
     }, { CE: 0, RO: 0, AC: 0, AE: 0 });
   },
+  scoreSum: (state) => {
+    return state.scores.reduce((sum, { CE, RO, AC, AE }) => {
+      return sum += (CE + RO + AC + AE);
+    }, 0);
+  },
   // = sentenceCount
   scoreCount: state => state.scores.length,
 };
