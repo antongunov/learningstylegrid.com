@@ -8,6 +8,16 @@
       <div class="grid__radar-chart">
         <svg version="1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" v-html="svgRadarChart"></svg>
       </div>
+      <div class="grid__learning-style">
+        <p>
+          You have {{ learningStyle ? 'the' : 'a balancing' }}
+          <a
+            href="https://en.wikipedia.org/wiki/Kolb's_experiential_learning#Kolb.27s_learning_styles"
+            target="_blank"
+            v-if="learningStyle">{{ learningStyle }}</a>
+          style.
+        </p>
+      </div>
     </div>
     <div class="grid__buttons">
       <button class="button button--secondary" @click="backInventory">← Inventory</button>
@@ -82,6 +92,15 @@
       sentenceCount() {
         return this.$store.getters.sentenceCount;
       },
+      learningStyle() {
+        const { CE, RO, AC, AE } = this.scoreTotal;
+        let style = '';
+        if (CE > AC && AE > RO) style = 'Accommodating';
+        if (CE > AC && AE < RO) style = 'Diverging';
+        if (CE < AC && AE > RO) style = 'Converging';
+        if (CE < AC && AE < RO) style = 'Assimilating';
+        return style;
+      },
       scoreSum() {
         return this.$store.getters.scoreSum;
       },
@@ -110,6 +129,10 @@
         color: $color-red;
         font-size: 1.5rem;
       }
+    }
+
+    &__learning-style {
+      font-weight: 600;
     }
 
     &__radar-chart {
