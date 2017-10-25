@@ -3,11 +3,12 @@
     <div class="inventory_sentence">
       <transition name="fade" mode="out-in">
         <app-sentence
-          :sentence="sentences[sentenceIndex]"
-          :scores="sentenceScores"
           :number="sentenceNumber"
-          :key="sentenceIndex"
-          @sentence-rank="sentenceRank"></app-sentence>
+          :begin="sentence.begin"
+          :endings="sentence.endings"
+          :scores="sentenceScores"
+          :key="sentenceNumber"
+          @rank="rankSentence"></app-sentence>
       </transition>
     </div>
     <div class="inventory__buttons">
@@ -23,7 +24,6 @@
 
 <script type="text/javascript">
   import Sentence from './Sentence.vue';
-  import sentences from '../sentences.json';
 
   export default {
     name: 'Inventory',
@@ -33,23 +33,21 @@
         required: true,
       },
     },
-    data () {
-      return {
-        sentences,
-      };
-    },
     computed: {
+      sentenceCount() {
+        return this.$store.getters.sentenceCount;
+      },
+      sentence() {
+        return this.$store.getters.sentence(this.sentenceNumber);
+      },
       sentenceScores() {
         return this.$store.getters.sentenceScores(this.sentenceNumber);
-      },
-      sentenceIndex() {
-        return this.sentenceNumber - 1;
       },
       checkPrev() {
         return this.sentenceNumber > 1;
       },
       checkNext() {
-        return this.sentenceNumber < this.sentences.length;
+        return this.sentenceNumber < this.sentenceCount;
       },
     },
     components: {
@@ -70,10 +68,10 @@
           this.$router.push('/app/grid');
         }
       },
-      sentenceRank(sentenceScores) {
+      rankSentence(sentenceScores) {
         this.$store.dispatch('updateScores', {
-          sentenceNumber: this.sentenceNumber,
-          sentenceScores,
+          number: this.sentenceNumber,
+          scores: sentenceScores,
         });
       }
     },

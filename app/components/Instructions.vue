@@ -3,7 +3,7 @@
     <h1 class="instructions__title">Instructions for the <abbr title="Learning Style Inventory">LSI</abbr></h1>
     <ol class="instructions__list">
       <li class="instructions__item instruction">
-        <span class="instruction__text">Rank the endings for 12 sentences: 4 for most like you, 1 for least like you.</span>
+        <span class="instruction__text">Rank the endings for {{ sentenceCount }} sentences: 4 for most like you, 1 for least like you.</span>
       </li>
       <li class="instructions__item instruction">
         <span class="instruction__text">Do not give two ending the same ranking.</span>
@@ -22,6 +22,11 @@
 <script type="text/javascript">
   export default {
     name: 'Instructions',
+    computed: {
+      sentenceCount() {
+        return this.$store.getters.sentenceCount;
+      },
+    },
   }
 </script>
 

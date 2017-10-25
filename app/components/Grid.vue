@@ -65,18 +65,18 @@
       };
     },
     computed: {
-      countScores() {
-        return this.$store.getters.countScores;
+      scoreCount() {
+        return this.$store.getters.scoreCount;
       },
       maxScore() {
-        return 4 * this.countScores;
+        return 4 * this.scoreCount;
       },
-      totalScores() {
-        return this.$store.getters.totalScores;
+      scoreTotal() {
+        return this.$store.getters.scoreTotal;
       },
     },
     mounted () {
-      const chart = radarChart(captions, [ normalize(this.totalScores, this.maxScore) ], renderOptions);
+      const chart = radarChart(captions, [ normalize(this.scoreTotal, this.maxScore) ], renderOptions);
       this.svgRadarChart = toHTML(chart);
     }
   }

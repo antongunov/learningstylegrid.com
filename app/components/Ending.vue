@@ -1,16 +1,14 @@
 <template>
   <div class="ending">
-    <div class="ending__text">
-      <p>...{{ text }}</p>
+    <div class="ending__title">
+      <p>{{ title }}</p>
     </div>
     <div class="ending__score-buttons">
       <ul class="score-buttons score-buttons__list">
         <li v-for="score in 4" class="score-buttons__item">
           <a
-            @click="rank(score)"
-            class="score-button"
-            :class="{ 'score-button--ranked': score === endingScore }"
-          >{{ score }}</a>
+            class="score-button" :class="{ 'score-button--ranked': score === endingScore }"
+            @click="rank(score)">{{ score }}</a>
         </li>
       </ul>
     </div>
@@ -21,7 +19,7 @@
   export default {
     name: 'Ending',
     props: {
-      text: {
+      ending: {
         type: String,
         required: true,
       },
@@ -35,6 +33,11 @@
         endingScore: this.score,
       };
     },
+    computed: {
+      title() {
+        return `...${this.ending}`;
+      },
+    },
     watch: {
       score: function () {
         this.endingScore = this.score;
@@ -43,7 +46,7 @@
     methods: {
       rank(score) {
         this.endingScore = this.endingScore === score ? 0 : score;
-        this.$emit('ending-rank', this.endingScore);
+        this.$emit('rank', this.endingScore);
       },
     },
   }
@@ -51,7 +54,7 @@
 
 <style lang="scss" scoped>
   .ending {
-    &__text {
+    &__title {
 
     }
 

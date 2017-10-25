@@ -11,6 +11,7 @@
     name: 'App',
     created() {
       this.$store.dispatch('initScores', sentences.length);
+      this.$store.dispatch('initSentences', sentences);
     },
   }
 </script>

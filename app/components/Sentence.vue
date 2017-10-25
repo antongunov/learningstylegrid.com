@@ -2,12 +2,11 @@
   <div class="sentence">
     <h1 class="sentence__title">{{ title }}</h1>
     <ul>
-      <li v-for="(ending, style) in sentence.endings" >
+      <li v-for="(ending, style) in endings" >
         <app-ending
-          :text="sentence.endings[style]"
+          :ending="endings[style]"
           :score="sentenceScores[style]"
-          @ending-rank="endingRank(style, $event)"
-        ></app-ending>
+          @rank="rankEnding(style, $event)"></app-ending>
       </li>
     </ul>
   </div>
@@ -19,16 +18,20 @@
   export default {
     name: 'Sentence',
     props: {
-      sentence: {
+      number: {
+        type: Number,
+        required: true,
+      },
+      begin: {
+        type: String,
+        required: true,
+      },
+      endings: {
         type: Object,
         required: true,
       },
       scores: {
         type: Object,
-        required: true,
-      },
-      number: {
-        type: Number,
         required: true,
       },
     },
@@ -39,18 +42,18 @@
     },
     computed: {
       title() {
-        return `#${this.number}. ${this.sentence.begin}...`;
+        return `#${this.number}. ${this.begin}...`;
       },
     },
     methods: {
-      endingRank(rankStyle, score) {
+      rankEnding(rankStyle, score) {
         this.sentenceScores[rankStyle] = score;
         Object.keys(this.sentenceScores).forEach(style => {
           if (style !== rankStyle && this.sentenceScores[style] === score) {
             this.sentenceScores[style] = 0;
           }
         });
-        this.$emit('sentence-rank', this.sentenceScores);
+        this.$emit('rank', this.sentenceScores);
       },
     },
     components: {
