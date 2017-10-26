@@ -1,8 +1,9 @@
+const webpack = require('webpack');
 const resolve = require('path').resolve;
 
 require('dotenv').config();
 
-const live = !process.env.NOVE_ENV || process.env.NOVE_ENV === 'development';
+const live = !process.env.NODE_ENV || process.env.NODE_ENV === 'development';
 
 module.exports = {
   entry: resolve('app/main.js'),
@@ -18,14 +19,18 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            'scss': 'vue-style-loader!css-loader!sass-loader?data=@import "assets/sass/utils/variables";',
+            scss: 'vue-style-loader!css-loader!sass-loader?data=@import "assets/sass/utils/variables";',
           },
         },
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        exclude: /node_modules/
+        include: [
+          resolve('app'),
+          // node_modules isn't transpiled by default
+          resolve('node_modules/svg-radar-chart'),
+        ],
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -49,4 +54,18 @@ module.exports = {
       ]
     },
   },
+  plugins: !live
+    ? [
+      new webpack.DefinePlugin({
+        'process.env': {
+          NODE_ENV: '"production"'
+        },
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        compress: {
+          warnings: false,
+        }
+      }),
+    ]
+    : [],
 };

@@ -25,15 +25,15 @@
     "font-awesome": "^4.7.0",
     "svg-radar-chart": "^0.2.0",
     "virtual-dom-stringify": "^3.0.1",
-    "vue": "^2.4.2",
-    "vue-router": "^2.7.0",
-    "vuex": "^2.4.0"
+    "vue": "^2.5.2",
+    "vue-router": "^2.8.1",
+    "vuex": "^2.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.4",
+    "autoprefixer": "^7.1.6",
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
-    "babel-preset-env": "^1.6.0",
+    "babel-preset-env": "^1.6.1",
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
     "file-loader": "^0.11.2",
@@ -45,9 +45,9 @@
     "pug": "^2.0.0-rc.4",
     "pug-cli": "^1.0.0-alpha6",
     "sass-loader": "^6.0.6",
-    "vue-loader": "^13.0.4",
-    "vue-template-compiler": "^2.4.2",
-    "webpack": "^3.5.6",
-    "webpack-dev-server": "^2.7.1"
+    "vue-loader": "^13.3.0",
+    "vue-template-compiler": "^2.5.2",
+    "webpack": "^3.8.1",
+    "webpack-dev-server": "^2.9.3"
   }
 }
