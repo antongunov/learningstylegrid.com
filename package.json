@@ -1,7 +1,7 @@
 {
   "name": "@antongunov/learningstylegrid.com",
   "version": "0.0.1",
-  "description": "Build a learning style grid",
+  "description": "Building a learning style grid using Kolb's inventory",
   "private": true,
   "author": {
     "name": "Anton Gunov",
@@ -18,7 +18,6 @@
     "public": "cp -r public/* build/",
     "pug": "pug -O 'pages/pug/pug.config.js' pages/*.pug --out build/",
     "sass": "node-sass --include-path node_modules/ assets/sass/main.scss | postcss -o build/assets/css/main.css",
-    "start": "npm run build && static build",
     "static": "npm run clean && npm run public && npm run images && npm run fonts && npm run pug && npm run sass && npm run app"
   },
   "dependencies": {
@@ -37,8 +36,8 @@
     "css-loader": "^0.28.7",
     "dotenv": "^4.0.0",
     "file-loader": "^0.11.2",
+    "mustache": "^2.3.0",
     "node-sass": "^4.5.3",
-    "node-static": "^0.7.10",
     "postcss-cli": "^4.1.1",
     "postcss-font-magician": "^2.1.0",
     "postcss-normalize": "^4.0.0",

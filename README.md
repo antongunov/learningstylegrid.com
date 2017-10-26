@@ -14,7 +14,6 @@ npm install
 
 Run one of the next `npm` commands:
 
-* `npm start` for building assets and locally serving static files;
 * `npm run dev` for developing;
 * `npm run build` for production.
 
