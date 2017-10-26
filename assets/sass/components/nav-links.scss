@@ -28,11 +28,20 @@
   &--style-home {
     background-color: $color-primary;
     color: $color-white;
+
+    i {
+      font-size: 1.5rem;
+    }
   }
 
   &--style-app {
     background-color: rgba(0, 0, 0, 0);
-    // color: darken($color-primary, 10);
     color: $color-black;
+
+    i {
+      background-color: $color-white;
+      border-radius: 50%;
+      font-size: 1.5rem;
+    }
   }
 }

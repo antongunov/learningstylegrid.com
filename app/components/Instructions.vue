@@ -58,16 +58,17 @@
     margin: $font-height / 2 0;
 
     &:before {
+      $size-circle: $font-height + .1rem;
+
       background-color: $color-black;
       border-radius: 50%;
       color: $color-white;
       content: counter(li);
       counter-increment: li;
       display: block;
+      line-height: $size-circle;
       text-align: center;
-      width: $font-height + .2rem;
-
-      line-height: $font-height + .2rem;
+      width: $size-circle;
     }
 
     &__text {
