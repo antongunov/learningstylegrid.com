@@ -2,7 +2,7 @@
   <div class="sentence">
     <h1 class="sentence__title">{{ title }}</h1>
     <ul>
-      <li v-for="(ending, style) in endings" >
+      <li v-for="(ending, style) in endings">
         <app-ending
           :ending="endings[style]"
           :score="sentenceScores[style]"
