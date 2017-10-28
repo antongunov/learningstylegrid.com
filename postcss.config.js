@@ -1,6 +1,7 @@
-const normalize = require('postcss-normalize');
-const fontMagician = require('postcss-font-magician');
 const autoprefixer = require('autoprefixer');
+const cssnano = require('cssnano');
+const fontMagician = require('postcss-font-magician');
+const normalize = require('postcss-normalize');
 
 module.exports = {
   plugins: [
@@ -13,5 +14,8 @@ module.exports = {
     autoprefixer({
       cascade: false,
     }),
-  ],
+    cssnano({
+      preset: 'default',
+    }),
+  ]
 };
