@@ -1,4 +1,4 @@
-import Grid from '../components/Grid.vue';
+import Grid from '../components/grid/Grid.vue';
 import Instructions from '../components/Instructions.vue';
 import Inventory from '../components/Inventory.vue';
 
