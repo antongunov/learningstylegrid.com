@@ -1,47 +1,110 @@
 [
   {
-    "begin": "Begin sentence",
+    "begin": "When I learn",
     "endings": {
-      "CE": "ending (CE)",
-      "RO": "ending (RO)",
-      "AC": "ending (AC)",
-      "AE": "ending (AE)"
+      "CE": "I like to deal with my feelings",
+      "RO": "I like to watch and listen",
+      "AC": "I like to think about ideas",
+      "AE": "I like to be doing things"
     }
   },
   {
-    "begin": "Begin sentence",
+    "begin": "I learn best when",
     "endings": {
-      "CE": "ending (CE)",
-      "RO": "ending (RO)",
-      "AC": "ending (AC)",
-      "AE": "ending (AE)"
+      "CE": "I trust my hunches and feelings",
+      "RO": "I listen and watch carefully",
+      "AC": "I rely on logical thinking",
+      "AE": "I work hard to get things done"
     }
   },
   {
-    "begin": "Begin sentence",
+    "begin": "When I am learning",
     "endings": {
-      "CE": "ending (CE)",
-      "RO": "ending (RO)",
-      "AC": "ending (AC)",
-      "AE": "ending (AE)"
+      "CE": "I have strong feelings and reactions",
+      "RO": "I am quiet and reserved",
+      "AC": "I tend to reason things out",
+      "AE": "I am responsible about things"
     }
   },
   {
-    "begin": "Begin sentence",
+    "begin": "I learn by",
     "endings": {
-      "CE": "ending (CE)",
-      "RO": "ending (RO)",
-      "AC": "ending (AC)",
-      "AE": "ending (AE)"
+      "CE": "feeling",
+      "RO": "watching",
+      "AC": "thinking",
+      "AE": "doing"
     }
   },
   {
-    "begin": "Begin sentence",
+    "begin": "When I learn",
     "endings": {
-      "CE": "ending (CE)",
-      "RO": "ending (RO)",
-      "AC": "ending (AC)",
-      "AE": "ending (AE)"
+      "CE": "I am open to new experiences",
+      "RO": "I look at all sides of issues",
+      "AC": "I like to analyze things, break them down into their parts",
+      "AE": "I like to try things out"
+    }
+  },
+  {
+    "begin": "When I am learning",
+    "endings": {
+      "CE": "I am an intuitive person",
+      "RO": "I am an observant person",
+      "AC": "I am a logical person",
+      "AE": "I am an active person"
+    }
+  },
+  {
+    "begin": "I learn best from",
+    "endings": {
+      "CE": "personal relationships",
+      "RO": "observation",
+      "AC": "rational theories",
+      "AE": "a chance to try out and practice"
+    }
+  },
+  {
+    "begin": "When I learn",
+    "endings": {
+      "CE": "I feel personally involved",
+      "RO": "I take my time before acting",
+      "AC": "I like ideas and theories",
+      "AE": "I like to see results from my work"
+    }
+  },
+  {
+    "begin": "I learn best when",
+    "endings": {
+      "CE": "I rely on my feelings",
+      "RO": "I rely on my observations",
+      "AC": "I rely on my ideas",
+      "AE": "I can try things out for myself"
+    }
+  },
+  {
+    "begin": "When I am learning",
+    "endings": {
+      "CE": "I am an accepting person",
+      "RO": "I am a reserved person",
+      "AC": "I am a rational person",
+      "AE": "I am a responsible person"
+    }
+  },
+  {
+    "begin": "When I learn",
+    "endings": {
+      "CE": "I get involved",
+      "RO": "I like to observe",
+      "AC": "I evaluate things",
+      "AE": "I like to be active"
+    }
+  },
+  {
+    "begin": "I learn best when",
+    "endings": {
+      "CE": "I am receptive and open-minded",
+      "RO": "I am careful",
+      "AC": "I analyze ideas",
+      "AE": "I am practical"
     }
   }
 ]
