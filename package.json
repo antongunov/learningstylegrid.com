@@ -1,7 +1,7 @@
 {
   "name": "@antongunov/learningstylegrid.com",
   "version": "0.0.1",
-  "description": "Building a learning style grid using Kolb's inventory",
+  "description": "Building a learning style grid using KLSI 4.0",
   "private": true,
   "author": {
     "name": "Anton Gunov",

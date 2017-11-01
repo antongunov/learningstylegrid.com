@@ -1,6 +1,6 @@
 # Learning Style Grid
 
-[Learning Style Grid](http://learningstylegrid.com) is an online tool to build a learning style grid using Kolb's inventory.
+[Learning Style Grid](http://learningstylegrid.com) is an online tool to build a learning style grid using [The Kolb Learning Style Inventory 4.0](https://www.researchgate.net/publication/303446688_The_Kolb_Learning_Style_Inventory_40_Guide_to_Theory_Psychometrics_Research_Applications).
 
 ## How to Install
 
