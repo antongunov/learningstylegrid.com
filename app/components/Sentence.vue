@@ -1,7 +1,7 @@
 <template>
   <div class="sentence">
     <h1 class="sentence__title">{{ title }}</h1>
-    <ul>
+    <ul class="sentence__endings">
       <li v-for="(ending, style) in endings">
         <app-ending
           :ending="endings[style]"
@@ -66,6 +66,11 @@
   .sentence {
     &__title {
 
+    }
+
+    &__endings {
+      margin: 0 auto;
+      max-width: 21rem;
     }
   }
 </style>

@@ -152,7 +152,7 @@
     $diameter: 2rem;
 
     background-color: rgba($color-blue, .8);
-    border-radius: $diameter;
+    border-radius: 50%;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .17);
     height: $diameter;
     position: absolute;

@@ -13,6 +13,7 @@
         </div>
         <div class="grid__learning-style">
           <p>You have the <strong>{{ learningStyle.name }}</strong> learning style.</p>
+          <p>For more information about your style, you can refer to the page #{{ learningStyle.page }} of the guide <a href="https://learningfromexperience.com/research-library/the-kolb-learning-style-inventory-4-0/" target="_blank">KLSI 4.0</a>.</p>
         </div>
       </div>
       <div class="grid__buttons">
@@ -72,12 +73,14 @@
       }
     }
 
-    &__learning-style {
+    &__chart {
 
     }
 
-    &__chart {
-
+    &__learning-style {
+      a {
+        white-space: nowrap;
+      }
     }
 
     &__buttons {
