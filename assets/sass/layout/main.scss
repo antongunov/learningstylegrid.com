@@ -6,11 +6,21 @@
 
   }
 
-  &__button {
+  &__title {
 
   }
 
-  &__title {
+  &__text {
+    color: $color-white;
+    margin: 0 auto 3rem;
+    font-size: 1.1rem;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  &__button {
 
   }
 }
