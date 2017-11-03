@@ -65,8 +65,8 @@
       color: $color-white;
       content: counter(li);
       counter-increment: li;
-      display: block;
-      line-height: $size-circle;
+      display: inline-block;
+      height: $size-circle;
       text-align: center;
       width: $size-circle;
     }

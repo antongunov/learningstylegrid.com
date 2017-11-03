@@ -21,6 +21,7 @@
     "static": "npm run clean && npm run public && npm run images && npm run fonts && npm run pug && npm run sass && npm run app"
   },
   "dependencies": {
+    "es6-promise": "^4.1.1",
     "font-awesome": "^4.7.0",
     "vue": "^2.5.2",
     "vue-router": "^2.8.1",
@@ -31,6 +32,7 @@
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
     "babel-preset-env": "^1.6.1",
+    "babel-preset-stage-3": "^6.24.1",
     "css-loader": "^0.28.7",
     "cssnano": "^3.10.0",
     "dotenv": "^4.0.0",

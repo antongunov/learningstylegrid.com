@@ -37,7 +37,7 @@
     },
     data() {
       return {
-        sentenceScores: Object.assign({}, this.scores),
+        sentenceScores: { ...this.scores },
       };
     },
     computed: {

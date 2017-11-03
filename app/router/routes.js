@@ -11,7 +11,7 @@ export const routes = [
     path: '/app/inventory/sentence-:sentenceNumber',
     component: Inventory,
     props: ({ params }) => ({
-      sentenceNumber: Number.parseInt(params.sentenceNumber, 10),
+      sentenceNumber: parseInt(params.sentenceNumber, 10),
     }),
   },
   {

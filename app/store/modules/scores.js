@@ -11,7 +11,7 @@ const mutations = {
     while (i-- > 0) state.scores.push({ CE: 0, RO: 0, AC: 0, AE: 0 });
   },
   updateScores: (state, { number, scores }) => {
-    state.scores.splice(number - 1, 1, Object.assign({}, scores));
+    state.scores.splice(number - 1, 1, { ...scores });
   },
 };
 
