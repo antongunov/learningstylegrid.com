@@ -2,6 +2,14 @@
 
 [Learning Style Grid](http://learningstylegrid.com) is an online tool to build a learning style grid using [The Kolb Learning Style Inventory 4.0](https://learningfromexperience.com/research-library/the-kolb-learning-style-inventory-4-0/).
 
+<p align="center">
+  <a href="http://learningstylegrid.com/" target="_blank">
+    <img src="learningstylegrid.png" width="800px">
+    <br>
+    Build My Style Grid
+  </a>  
+</p>
+
 ## How to Install
 
 Clone this repository and install dependencies:
