@@ -15,13 +15,13 @@
     </div>
     <div class="chart__source-data">
       <p>
-        <span>AC= {{ scoreTotal.AC }}</span>
-        <span>CE= {{ scoreTotal.CE }}</span>
-        <span>AE= {{ scoreTotal.AE }}</span>
-        <span>RO= {{ scoreTotal.RO }}</span>
+        <span title="Abstract Conceptualization">AC= {{ scoreTotal.AC }}</span>
+        <span title="Concrete Experience">CE= {{ scoreTotal.CE }}</span>
+        <span title="Active Experimentation">AE= {{ scoreTotal.AE }}</span>
+        <span title="Reflective Observation">RO= {{ scoreTotal.RO }}</span>
         <span>|</span>
-        <span>ACCE= {{ ACCE }}</span>
-        <span>AERO= {{ AERO }}</span>
+        <span title="AC - CE">ACCE= {{ ACCE }}</span>
+        <span title="AE - RO">AERO= {{ AERO }}</span>
       </p>
     </div>
   </div>
