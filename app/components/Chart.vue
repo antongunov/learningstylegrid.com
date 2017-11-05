@@ -11,7 +11,7 @@
             }">{{ learningStyles[key].name }}</td>
         </tr>
       </table>
-      <div class="point" :style="pointPosition"></div>
+      <div class="point" :style="pointPosition" :title="pointTitle"></div>
     </div>
     <div class="chart__source-data">
       <p>
@@ -83,9 +83,15 @@
 
         return style;
       },
+      pointPercentiles() {
+        return {
+          ACCE: this.calcPercentile('ACCE', this.ACCE),
+          AERO: this.calcPercentile('AERO', this.AERO),
+        };
+      },
       pointPosition() {
-        const y = this.percentile('ACCE');
-        const x = this.percentile('AERO');
+        const y = this.pointPercentiles.ACCE;
+        const x = this.pointPercentiles.AERO;
 
         const sizeTable = 19.5;
         const diameterPoint = 2;
@@ -96,10 +102,12 @@
           left: (100 - x) - offset + '%',
         };
       },
+      pointTitle() {
+        return `ACCE= ${this.pointPercentiles.ACCE}% AERO= ${this.pointPercentiles.AERO}%`;
+      },
     },
     methods: {
-      percentile(type) {
-        const value = this[type];
+      calcPercentile(type, value) {
         const offset = percentiles[type].offset;
         const maxValue = percentiles[type].data.length - offset;
 
