@@ -26,11 +26,7 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
-        include: [
-          resolve('app'),
-          // node_modules isn't transpiled by default
-          resolve('node_modules/svg-radar-chart'),
-        ],
+        exclude: /node_modules/,
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
@@ -51,8 +47,9 @@ module.exports = {
     historyApiFallback: {
       rewrites: [
         { from: /^\/app/, to: '/app/index.html' },
-      ]
+      ],
     },
+    host: '0.0.0.0',
   },
   plugins: !live
     ? [
