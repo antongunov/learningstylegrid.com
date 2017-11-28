@@ -8,6 +8,7 @@
     "email": "anton@gunov.name"
   },
   "license": "MIT",
+  "homepage": "http://learningstylegrid.com/",
   "scripts": {
     "app": "mkdir -p build/app && mv build/app.html build/app/index.html",
     "build": "npm run static && webpack --progress --hide-modules",
