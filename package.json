@@ -22,33 +22,33 @@
     "static": "npm run clean && npm run public && npm run images && npm run fonts && npm run pug && npm run sass && npm run app"
   },
   "dependencies": {
-    "es6-promise": "^4.1.1",
+    "es6-promise": "^4.2.4",
     "font-awesome": "^4.7.0",
-    "vue": "^2.5.2",
+    "vue": "^2.5.16",
     "vue-router": "^2.8.1",
     "vuex": "^2.5.0"
   },
   "devDependencies": {
-    "autoprefixer": "^7.1.6",
-    "babel-core": "^6.26.0",
-    "babel-loader": "^7.1.2",
+    "autoprefixer": "^7.2.6",
+    "babel-core": "^6.26.2",
+    "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.6.1",
     "babel-preset-stage-3": "^6.24.1",
-    "css-loader": "^0.28.7",
+    "css-loader": "^0.28.11",
     "cssnano": "^3.10.0",
     "dotenv": "^4.0.0",
     "file-loader": "^0.11.2",
     "mustache": "^2.3.0",
-    "node-sass": "^4.5.3",
+    "node-sass": "^4.9.0",
     "postcss-cli": "^4.1.1",
-    "postcss-font-magician": "^2.1.0",
+    "postcss-font-magician": "^2.1.1",
     "postcss-normalize": "^4.0.0",
-    "pug": "^2.0.0-rc.4",
+    "pug": "^2.0.3",
     "pug-cli": "^1.0.0-alpha6",
-    "sass-loader": "^6.0.6",
-    "vue-loader": "^13.3.0",
-    "vue-template-compiler": "^2.5.2",
-    "webpack": "^3.8.1",
-    "webpack-dev-server": "^2.9.3"
+    "sass-loader": "^6.0.7",
+    "vue-loader": "^13.7.1",
+    "vue-template-compiler": "^2.5.16",
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.2"
   }
 }
